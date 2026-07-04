@@ -1,0 +1,66 @@
+:root {
+  color-scheme: dark;
+  --lord-green: #7cff00;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #050505;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.page-shell {
+  animation: fade-in 900ms ease-out both;
+}
+
+.logo-glow {
+  filter:
+    drop-shadow(0 0 10px rgba(124, 255, 0, 0.34))
+    drop-shadow(0 0 32px rgba(124, 255, 0, 0.18));
+}
+
+.brand-logo {
+  width: min(58vw, 220px);
+  min-width: 116px;
+  height: auto;
+}
+
+.contact-link {
+  transition:
+    color 180ms ease,
+    opacity 180ms ease,
+    text-shadow 180ms ease;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: var(--lord-green);
+  opacity: 1;
+  outline: none;
+  text-shadow: 0 0 18px rgba(124, 255, 0, 0.35);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-shell {
+    animation: none;
+  }
+
+  .contact-link {
+    transition: none;
+  }
+}
